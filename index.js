@@ -1,5 +1,4 @@
 const inquirer = require("inquirer");
-const fs = require("fs");
 const Manager = require("./lib/Manager");
 const Intern = require("./lib/Intern");
 const Engineer = require("./lib/Engineer");
@@ -38,7 +37,6 @@ class Team {
         ])
             .then(data => {
                 this.manager = new Manager(data.name, data.id, data.email, data.officeNumber);
-                console.log(this.manager);
                 this.checkMoreMembers();
             })
     };
@@ -57,7 +55,8 @@ class Team {
                     console.log("add more members");
                     this.nextMember();
                 } else {
-                    console.log("no more members")
+                    console.log("no more members");
+                    generatePage(this);
                 }
             })
     };
@@ -105,7 +104,6 @@ class Team {
         ])
             .then(data => {
                 this.engineers.push(new Engineer(data.name, data.id, data.email, data.github));
-                console.log(this.engineers);
                 this.checkMoreMembers();
             })
     };
@@ -135,12 +133,9 @@ class Team {
         ])
             .then(data => {
                 this.interns.push(new Intern(data.name, data.id, data.email, data.school));
-                console.log(this.interns);
                 this.checkMoreMembers();
             })
     }
 }
 
 new Team().initializeTeam();
-
-
