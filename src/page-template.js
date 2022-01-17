@@ -13,7 +13,7 @@ function generateManagers(data) {
             <div class="card" style="width:100%;">
                 <ul class="list-group list-group-flush text-start">
                     <li class="list-group-item">ID: ${data.manager.id}</li>
-                    <li class="list-group-item">Email: ${data.manager.email}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${data.manager.email}">${data.manager.email}</a></li>
                     <li class="list-group-item">Office: ${data.manager.officeNumber}</li>
                 </ul>
             </div>
@@ -33,7 +33,7 @@ function generateEmployees(data) {
             <div class="card" style="width:100%;">
                 <ul class="list-group list-group-flush text-start">
                     <li class="list-group-item">ID: ${data.engineers[i].id}</li>
-                    <li class="list-group-item">Email: ${data.engineers[i].email}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${data.engineers[i].email}">${data.engineers[i].email}</a></li>
                     <li class="list-group-item">GitHub: <a href="http://www.github.com/${data.engineers[i].github}">${data.engineers[i].github}</a></li>
                 </ul>
             </div>
@@ -51,7 +51,7 @@ function generateEmployees(data) {
             <div class="card" style="width:100%;">
                 <ul class="list-group list-group-flush text-start">
                     <li class="list-group-item">ID: ${data.interns[i].id}</li>
-                    <li class="list-group-item">Email: ${data.interns[i].email}</li>
+                    <li class="list-group-item">Email: <a href="mailto:${data.interns[i].email}">${data.interns[i].email}</a></li>
                     <li class="list-group-item">School: ${data.interns[i].school}</li>
                 </ul>
             </div>
