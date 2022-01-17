@@ -52,10 +52,14 @@ class Team {
         ])
             .then(data => {
                 if (data.moreMembers) {
-                    console.log("add more members");
+                    console.log("---------------------------");
+                    console.log("|Let's add another member!|");
+                    console.log("---------------------------");
                     this.nextMember();
                 } else {
-                    console.log("no more members");
+                    console.log("----------------------------------------------------------------------");
+                    console.log("|Team profile complete. Check the dist folder for your HTML Document!|");
+                    console.log("----------------------------------------------------------------------");
                     generatePage(this);
                 }
             })
